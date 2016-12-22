@@ -1,0 +1,25 @@
+---
+
+- name: Ensure that includes dir exists
+  file:
+    path: "{{ nginx_includes_dir }}"
+    state: directory
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_group }}"
+
+- name: Copy role include files
+  copy:
+    src: "includes/"
+    dest: "{{ nginx_includes_dir }}"
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_group }}"
+  notify: reload nginx
+
+- name: Create extra includes from config
+  copy:
+    content: "{{ item.value }}"
+    dest: "{{ nginx_includes_dir }}/{{ item.key }}.conf"
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_group }}"
+  with_dict: "{{ nginx_includes_extra }}"
+  notify: reload nginx

@@ -1,0 +1,4 @@
+---
+
+nginx_includes_dir: "/etc/nginx/includes"
+nginx_includes_extra: {}

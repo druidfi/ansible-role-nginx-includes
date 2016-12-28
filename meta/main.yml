@@ -32,6 +32,6 @@ galaxy_info:
   categories:
    - web
 allow_duplicates: yes
-dependencies:
- - jdauphant.nginx
+dependencies: []
+# - jdauphant.nginx
 

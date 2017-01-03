@@ -14,10 +14,21 @@ The directory inside which Certbot will be cloned.
 
     nginx_includes_extra: {}
 
-Extra includes to be created through ansible config. Ie.
+Extra includes to be created through config.
+
+    nginx_includes_extra_templates: []
+
+Extra includes to be created through templates.
+
+Variable example usage:
 
     nginx_includes_extra:
+      # Will translate into includes/notfound.conf
       - notfound: "return 404"
+      
+    nginx_includes_extra_templates:
+      # Will translate into includes/myinclude.conf
+      - templates/myinclude.conf.j2
 
 
 ## Dependencies

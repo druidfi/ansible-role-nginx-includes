@@ -2,3 +2,4 @@
 
 nginx_includes_path: "/etc/nginx/includes"
 nginx_includes_extra: {}
+nginx_includes_extra_templates: []

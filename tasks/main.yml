@@ -23,3 +23,12 @@
     group: "{{ nginx_group }}"
   with_dict: "{{ nginx_includes_extra }}"
   notify: reload nginx
+
+- name: Create extra includes from templates
+  template:
+    src: "{{ item }}"
+    dest: "{{ nginx_includes_path }}/{{ item | basename | regex_replace('\\.j2','') }}"
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_group }}"
+  with_items: "{{ nginx_includes_extra_templates }}"
+  notify: reload nginx

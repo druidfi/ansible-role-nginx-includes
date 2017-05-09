@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>{{ nginx_error_page_title }} | {{ nginx_error_page_org }}</title>
+    <style type="text/css">
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-family: "Open Sans", "Segoe UI", sans-serif;
+       flex-direction: column;
+       background-color: black;
+       text-align: center;
+    }
+    h1 {
+       padding: 12px;
+       font-size: 24pt;
+       font-weight: 300;
+       color: #fc421d;
+    }
+    h1 span {
+       color: white;
+    }
+    h2 {
+       font-weight: 400;
+       font-size: 4vw;
+       color: #fc421d;
+       margin: 64px 12px 12px 12px;
+    }
+    p {
+       font-size: 12pt;
+       line-height: 18pt;
+       color: white;
+    }
+    </style>
+</head>
+<body>
+<h1>{{ nginx_error_page_org }} <span>{{ nginx_error_page_title }}</span></h1>
+<h2>{{ nginx_error_page_status }}</h2>
+<p>{{ nginx_error_page_text }}</p>
+</body>
+</html>

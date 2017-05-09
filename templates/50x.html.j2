@@ -15,6 +15,7 @@
        font-family: "Open Sans", "Segoe UI", sans-serif;
        flex-direction: column;
        background-color: black;
+       text-align: center;
     }
     h1 {
        padding: 12px;
@@ -22,20 +23,11 @@
        font-weight: 300;
        color: #fc421d;
     }
-    svg {
-       height: 20px;
-       width: 20px;
-    }
-    small {
-       font-weight: 400;
-       display: block;
-       font-size: 12px;
-       text-transform: uppercase;
-       letter-spacing: 0.1rem;
+    h1 span {
+       color: white;
     }
     h2 {
        font-weight: 400;
-       text-align: center;
        font-size: 4vw;
        color: #fc421d;
        margin: 64px 12px 12px 12px;
@@ -48,7 +40,7 @@
     </style>
 </head>
 <body>
-<h1>{{ nginx_error_page_org }} <small>{{ nginx_error_page_title }}</small></h1>
+<h1>{{ nginx_error_page_org }} <span>{{ nginx_error_page_title }}</span></h1>
 <h2>{{ nginx_error_page_status }}</h2>
 <p>{{ nginx_error_page_text }}</p>
 </body>

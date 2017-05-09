@@ -3,3 +3,8 @@
 nginx_includes_path: "/etc/nginx/includes"
 nginx_includes_extra: {}
 nginx_includes_extra_templates: []
+
+nginx_error_page_org: "druid.fi"
+nginx_error_page_title: "Site in currently under maintenance"
+nginx_error_page_status: "We're upgrading the site currently"
+nginx_error_page_text: "We'll be back shortly."

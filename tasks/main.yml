@@ -20,6 +20,20 @@
     src: templates/50x.html.j2
     dest: /etc/nginx/50x.html
 
+- name: Ensure that error dir exists
+  file:
+    path: "/etc/nginx/error/"
+    state: directory
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_group }}"
+
+- name: Copy PHP error 413 file
+  copy:
+    src: error/error-413.php
+    dest: /etc/nginx/error/error-413.php
+    owner: "{{ nginx_user }}"
+    group: "{{ nginx_group }}"
+
 - name: Create extra includes from config
   copy:
     content: "{{ item.value }}"
